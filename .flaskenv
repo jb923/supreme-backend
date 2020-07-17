@@ -1,0 +1,2 @@
+FLASK_APP=supreme_app.py
+FLASK_ENV=development
