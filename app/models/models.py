@@ -91,3 +91,11 @@ class Review(db.Model):
             "productId": self.product_id,
             "reviewBody": self.review_body,
         }
+
+
+class Size(db.Model):
+    __tablename__ = 'sizes'
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    # NEED TO ADD NEW TABLE take down database and recreate

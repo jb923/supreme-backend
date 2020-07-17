@@ -7,17 +7,17 @@ from ..config import Configuration
 
 bp = Blueprint("api", __name__, url_prefix="/api")
 
+
 @bp.route("/users", methods=["POST"])
 def signup_user():
-    print(request.json)
+    print(request.get_json)
     data = request.json
     user = User(first_name=data["firstName"], last_name=data["lastName"], email=data['email'], password=data['password'])
     db.session.add(user)
     db.session.commit()
     access_token = jwt.encode({'email': user.email}, Configuration.SECRET_KEY)
     return {'access_token': access_token.decode('UTF-8'), 'user': user.to_dict()}
-
-
+    
 
 
 
@@ -39,6 +39,7 @@ def create_transaction():
     except AssertionError as message:
         print(str(message))
         return jsonify({"error": str(message)}), 400
+
 
 @bp.route("/transactions/<int:userId>")
 def get_transaction(userId):
