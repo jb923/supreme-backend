@@ -17,8 +17,6 @@ def signup_user():
     db.session.commit()
     access_token = jwt.encode({'email': user.email}, Configuration.SECRET_KEY)
     return {'access_token': access_token.decode('UTF-8'), 'user': user.to_dict()}
-    
-
 
 
 @bp.route("/all")
@@ -32,7 +30,7 @@ def get_all_products():
 def create_transaction():
     data = request.json
     try:
-        transaction = Transaction(products=data["products"], user_id=data["userId"], total=data["total"])
+        transaction = Transaction(products=data["products"], user_id=data["userId"], size=data["size"], total=data["total"])
         db.session.add(transaction)
         db.session.commit()
         return jsonify({"transaction": "transaction created"})

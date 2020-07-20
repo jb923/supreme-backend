@@ -36,7 +36,6 @@ class Product(db.Model):
     price = db.Column(db.Integer, nullable=False)
     imgurl = db.Column(db.String, nullable=False)
     color = db.Column(db.String(100), nullable=True)
-    size = db.Column(db.String(100), nullable=True)
     description = db.Column(db.String, nullable=True)
     category = db.Column(db.Integer, nullable=False)
     new = db.Column(db.String(50), nullable=True)
@@ -48,11 +47,35 @@ class Product(db.Model):
             "price": self.price,
             "imgurl": self.imgurl,
             "color": self.color,
-            "size": self.size,
             "description": self.description,
             "category": self.category,
             "new": self.new,
         }
+
+    productSize = db.relationship("productSize", back_populates="product")
+
+
+class productSize(db.Model):
+    __tablename__ = 'productSizes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    small = db.Column(db.Boolean, nullable=True)
+    medium = db.Column(db.Boolean, nullable=True)
+    large = db.Column(db.Boolean, nullable=True)
+    xlarge = db.Column(db.Boolean, nullable=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
+
+    def to_dict(self):
+        return { 
+            "id": self.id,
+            "small": self.small,
+            "medium": self.medium,
+            "large": self.large,
+            "xlarge": self.xlarge,
+            "productId": self.product_id,
+        }
+
+    product = db.relationship("Product", back_populates="productSize")
 
 
 class Transaction(db.Model):
@@ -93,9 +116,5 @@ class Review(db.Model):
         }
 
 
-class Size(db.Model):
-    __tablename__ = 'sizes'
-
-    id = db.Column(db.Integer, primary_key=True)
 
     # NEED TO ADD NEW TABLE take down database and recreate
