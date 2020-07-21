@@ -1,4 +1,4 @@
-INSERT INTO productSizes (small, medium, large, xlarge product_id)
+INSERT INTO productsizes (small, medium, large, xlarge, product_id)
 VALUES
     (True, True, True, True, 1),
     (True, True, True, True, 2),
@@ -71,4 +71,4 @@ VALUES
 
 INSERT INTO reviews (user_id, first_name, last_name, product_id, review_body)
 VALUES
-    (1, 'demo', 'user', 1, "Pure Drip");
+    (1, 'demo', 'user', 1, 'Pure Drip');

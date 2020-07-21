@@ -52,11 +52,11 @@ class Product(db.Model):
             "new": self.new,
         }
 
-    productSize = db.relationship("productSize", back_populates="product")
+    productsize = db.relationship("Productsize", back_populates="product")
 
 
-class productSize(db.Model):
-    __tablename__ = 'productSizes'
+class Productsize(db.Model):
+    __tablename__ = 'productsizes'
 
     id = db.Column(db.Integer, primary_key=True)
     small = db.Column(db.Boolean, nullable=True)
@@ -75,7 +75,7 @@ class productSize(db.Model):
             "productId": self.product_id,
         }
 
-    product = db.relationship("Product", back_populates="productSize")
+    product = db.relationship("Product", back_populates="productsize")
 
 
 class Transaction(db.Model):
