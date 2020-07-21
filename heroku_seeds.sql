@@ -6,8 +6,8 @@ DELETE FROM reviews;
 
 INSERT INTO users (first_name, last_name, email, hashed_password)
 VALUES
-    ('demo', 'user', 'demouser@demouser.com', 'pbkdf2:sha256:150000$4GEjOHJy$9f70841b26d9affa53ba0557ecf3ba61492b10380968eb85d49c36e60601d3ae');
-    ('ceejay', 'duhh', 'ceejayduhh@ceejayduhh.com', 'pbkdf2:sha256:150000$z6FiYKkI$90c5656b1fede0e3893311b581b2bfef5c4f759045a7aa7e6f474e7e2df99839')
+    ('demo', 'user', 'demouser@demouser.com', 'pbkdf2:sha256:150000$4GEjOHJy$9f70841b26d9affa53ba0557ecf3ba61492b10380968eb85d49c36e60601d3ae'),
+    ('ceejay', 'duhh', 'ceejayduhh@ceejayduhh.com', 'pbkdf2:sha256:150000$z6FiYKkI$90c5656b1fede0e3893311b581b2bfef5c4f759045a7aa7e6f474e7e2df99839');
 
 
 INSERT INTO products (name, price, imgurl, color, description, category, new)
@@ -39,7 +39,7 @@ VALUES
     ('Woven Toggle Shirt', 13800, 'https://www.supremecommunity.com/u/season/add/202004098f724534597d497eae3a045e3d05a1ed_sqr.jpg', 'Black', 'All cotton with toggle front closure. Patch pockets at lower front and chest.', 'shirts', null),
     ('S/S Oxford Shirt Pink', 11800, 'https://www.supremecommunity.com/u/season/spring-summer2018/shirts/details/53ac658d3213466f866dddff849716a9_sqr.jpg', 'Pink', 'All cotton with single chest pocket.', 'shirts', null),
     ('S/S Oxford Shirt Orange', 11800, 'https://www.supremecommunity.com/u/season/add/20180517202fa7fdf8c14e1aa45e4c5441b29989_sqr.jpg', 'Orange', 'All cotton with single chest pocekt.', 'shirts', null),
-    -- tops
+    -- tops 26
     ('Supreme COVID-19 Relief Box Logo Tee', 6000, 'https://www.supremecommunity.com/u/season/add/20200424b48cbe0f6cf943b7a95a34538f3de2c2_sqr.jpg', 'White', 'All cotton classic Supreme t-shirt with printed logo on front and printed graphic on back. Original artwork by Takashi Murakami. *100% of proceeds benefit HELP USA.', 'tops', 'new'),
     ('San Francisco Box Logo Tee', 4800, 'https://stockx.imgix.net/products/streetwear/supreme-san-francisco-box-logo-tee-black.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1571931591&w=1000', 'Black', 'All cotton classic Supreme t-shirt with printed logo on front and printed graphic on back.', 'tops', null),
     ('Bandana Box Logo Tee Grey' 3800, 'https://www.supremecommunity.com/u/season/add/2019121990722ea7a6f444088e455762ff00e7bf_sqr.jpg', 'Heather Gray', 'All cotton classic Supreme t-shirt with printed logo on front.', 'tops', 'new'),
@@ -53,7 +53,7 @@ VALUES
     ('Brooklyn Box Logo Tee White', 5400, 'https://stockx.imgix.net/products/streetwear/Supreme-Brooklyn-Box-Logo-Tee-White.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1540842779&w=1000', 'White', 'All cotton classic Supreme t-shirt with printed logo on front.', 'tops', null),
     ('Scarface Split Tee Red', 4400, 'https://www.supremecommunity.com/u/season/add/20171010/c8741f2174c84006b1f697e20052a5d1_sqr.jpg', 'Red', 'Scarface collab.', 'tops', null)
     ('Scarface Split Tee Black', 4400, 'https://www.supremecommunity.com/u/season/add/2017101289c209ed3285435ea0e7481a267c33cb_sqr.jpg', 'Black', 'Scarface collab.', 'tops', null)
-    -- sweatshirts
+    -- sweatshirts 39
     ('Box Logo Hooded Sweatshirt White', 16800, 'https://stockx.imgix.net/products/streetwear/Supreme-Box-Logo-Hooded-Sweatshirt-White.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1538421793&w=1000', 'White', 'Heavyweight cotton crossgrain fleece with embroidered logo.', 'sweatshirts', 'new'),
     ('Box Logo Hooded Sweatshirt Yellow', 16800, 'https://www.supremecommunity.com/u/season/add/20171205/d0c01b620ead4af2bb30eb78daedfed0_sqr.jpg', 'Yellow', 'Heavyweight cotton crossgrain fleece with embroidered logo.', 'sweatshirts', null),
     ('Box Logo Hooded Sweatshirt Black', 16800, 'https://www.supremecommunity.com/u/season/add/20171205/020d4f1053fe4b248163bbe34411f439_sqr.jpg', 'Black', 'Heavyweight cotton crossgrain fleece with embroidered logo.', 'sweatshirts', null),
@@ -132,4 +132,4 @@ VALUES
     ('Supreme®/Spitfire® Classic Wheels (Set of 4) Gold', 3000, 'https://supremecommunity.com/u/season/add/202002270928e56b8c324ff3a2f90bfa4353180d_sqr.jpg', 'Gold', 'Classic Spitfire® wheels with custom Supreme art. 53mm wheels are classic 99D hard urethane. Made exclusively for Supreme.', 'skate', null),
     ('Supreme®/Spitfire® Classic Wheels (Set of 4) Red', 3000, 'https://supremecommunity.com/u/season/add/20200227130be964da0c4e66a8c7dba9f4f3757b_sqr.jpg', 'Red', 'Classic Spitfire® wheels with custom Supreme art. 53mm wheels are classic 99D hard urethane. Made exclusively for Supreme.', 'skate', null),
     ('Supreme®/Spitfire® Classic Wheels (Set of 4) White', 3000, 'https://supremecommunity.com/u/season/add/20200227a348c08225a9461c91d4b88a4bee9236_sqr.jpg', 'White', 'Classic Spitfire® wheels with custom Supreme art. 53mm wheels are classic 99D hard urethane. Made exclusively for Supreme.', 'skate', null),
-    ('Supreme®/Independent Truck', 5000, 'https://supremecommunity.com/u/season/spring-summer2020/skate/b965d3238d83403f88ea3a77a73ac1f4_sqr.jpg', 'Silver', 'Classic Independent truck with custom Supreme art. Each size sold separately as a pair of two trucks. Made exclusively for Supreme.', 'skate', null),
+    ('Supreme®/Independent Truck', 5000, 'https://supremecommunity.com/u/season/spring-summer2020/skate/b965d3238d83403f88ea3a77a73ac1f4_sqr.jpg', 'Silver', 'Classic Independent truck with custom Supreme art. Each size sold separately as a pair of two trucks. Made exclusively for Supreme.', 'skate', null);
