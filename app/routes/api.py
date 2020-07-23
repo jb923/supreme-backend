@@ -30,7 +30,7 @@ def get_all_products():
 def create_transaction():
     data = request.json
     try:
-        transaction = Transaction(products=data["products"], user_id=data["userId"], size=data["size"], total=data["total"])
+        transaction = Transaction(products=data["products"], user_id=data["userId"], total=data["total"])
         db.session.add(transaction)
         db.session.commit()
         return jsonify({"transaction": "transaction created"})
