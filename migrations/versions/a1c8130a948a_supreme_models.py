@@ -1,8 +1,8 @@
-"""and we back
+"""supreme models
 
-Revision ID: 739d462c6d5e
+Revision ID: a1c8130a948a
 Revises: 
-Create Date: 2020-07-21 10:53:45.997900
+Create Date: 2020-07-24 11:19:13.679069
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '739d462c6d5e'
+revision = 'a1c8130a948a'
 down_revision = None
 branch_labels = None
 depends_on = None

@@ -64,9 +64,9 @@ VALUES
 
 INSERT INTO transactions (products, user_id, total)
 VALUES
-    (ARRAY[1, 26], 1, 45800 ),
-    (ARRAY[43, 47], 1, 110300),
-    (ARRAY[51, 62], 1, 21600);
+    (ARRAY[1, 25, 38], 1, 62600 ),
+    (ARRAY[43, 47], 1, 76600),
+    (ARRAY[51, 61], 1, 20600);
 
 
 INSERT INTO reviews (user_id, first_name, last_name, product_id, review_body)
