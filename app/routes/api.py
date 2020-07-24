@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import jwt
 
-from ..models.models import db, User, Product, Transaction, Review
+from ..models.models import db, User, Product, Transaction, Review, Productsize
 from ..config import Configuration
 
 
@@ -18,12 +18,32 @@ def signup_user():
     access_token = jwt.encode({'email': user.email}, Configuration.SECRET_KEY)
     return {'access_token': access_token.decode('UTF-8'), 'user': user.to_dict()}
 
+# @bp.route("/users/session", methods=['POST'])
+# def signin_user():
+#     data = request.json
+#     user = User.query.filter(User.email == data['email']).first()
+#     if not user:
+#         return {"error": "Email not found"}, 422
+#     if user.check_password(data['password']):
+#         if user.first_name == 'demo':
+#             db.session.query(Review).filter(Review.user_id==1).delete()
+#             db.session.query(Transaction).filter(Transaction.user_id==1).delete()
+
+
+
 
 @bp.route("/all")
 def get_all_products():
     fetchedProducts = Product.query.all()
     products = [product.to_dict() for product in fetchedProducts]
     return {"products": products}
+
+
+@bp.route("/size")
+def get_product_sizes():
+    fetchedProductsizes = Productsize.query.all()
+    productsizes = [productsizes.to_dict() for productsizes in fetchedProductsizes]
+    return {"productsizes": productsizes}
 
 
 @bp.route("/transactions", methods=["POST"])
