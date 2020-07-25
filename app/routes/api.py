@@ -18,17 +18,38 @@ def signup_user():
     access_token = jwt.encode({'email': user.email}, Configuration.SECRET_KEY)
     return {'access_token': access_token.decode('UTF-8'), 'user': user.to_dict()}
 
-# @bp.route("/users/session", methods=['POST'])
-# def signin_user():
-#     data = request.json
-#     user = User.query.filter(User.email == data['email']).first()
-#     if not user:
-#         return {"error": "Email not found"}, 422
-#     if user.check_password(data['password']):
-#         if user.first_name == 'demo':
-#             db.session.query(Review).filter(Review.user_id==1).delete()
-#             db.session.query(Transaction).filter(Transaction.user_id==1).delete()
 
+@bp.route("/users/session", methods=['POST'])
+def signin_user():
+    data = request.json
+    user = User.query.filter(User.email == data['email']).first()
+    if not user:
+        return {"error": "Email not found"}, 422
+    if user.check_password(data['password']):
+        if user.first_name == 'demo':
+            db.session.query(Review).filter(Review.user_id==1).delete()
+            db.session.query(Transaction).filter(Transaction.user_id==1).delete()
+            review1 = Review(user_id=1, first_name='demo', last_name='user', product_id=1, review_body='My team only wears Supreme')
+            review2 = Review(user_id=1, first_name='demo', last_name='user', product_id=7, review_body='Perfect for the outdoors.')
+            review3 = Review(user_id=1, first_name='demo', last_name='user', product_id=26, review_body='I gotta have it!')
+            review4 = Review(user_id=1, first_name='demo', last_name='user', product_id=37, review_body='Say Hello to my little friend.')
+            review5 = Review(user_id=1, first_name='demo', last_name='user', product_id=43, review_body='Bruh, so clean!')
+            transaction1 = Transaction(products=[1, 25, 38], user_id=1, total=62600)
+            transaction2 = Transaction(products=[43, 47], user_id=1, total=76600)
+            transaction3 = Transaction(products=[51, 61], user_id=1, total=20600)
+            db.session.add(review1)
+            db.session.add(review2)
+            db.session.add(review3)
+            db.session.add(review4)
+            db.session.add(review5)
+            db.session.add(transaction1)
+            db.session.add(transaction2)
+            db.session.add(transaction3)
+            db.session.commit()
+        access_token = jwt.encode({'email': user.email}, Configuration.SECRET_KEY)
+        return { 'access_token': access_token.decode('UTF-8'), 'user': user.to_dict() }
+    else:
+        return {"error": "Incorrect password"}, 401
 
 
 
