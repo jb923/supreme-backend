@@ -1,8 +1,8 @@
-"""supreme models
+"""db made again
 
-Revision ID: a1c8130a948a
+Revision ID: 3f4e50c65390
 Revises: 
-Create Date: 2020-07-24 11:19:13.679069
+Create Date: 2020-07-27 01:34:01.192968
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a1c8130a948a'
+revision = '3f4e50c65390'
 down_revision = None
 branch_labels = None
 depends_on = None
