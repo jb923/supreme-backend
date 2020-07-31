@@ -1,2 +1,2 @@
-FLASK_APP=supreme_app.py
-FLASK_ENV=development
+FLASK_APP=xupreme_app.py
+FLASK_ENV=production

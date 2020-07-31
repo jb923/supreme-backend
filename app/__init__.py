@@ -8,7 +8,7 @@ from app.models.models import db
 from app.config import Configuration
 
 if os.environ.get("FLASK_ENV") == 'production':
-  app = Flask(__name__, static_folder='../flash-frontend/build/static', static_url_path='/static')
+  app = Flask(__name__, static_folder='../xupreme-frontend/build/static', static_url_path='/static')
 else:
   app = Flask(__name__)
 
@@ -25,12 +25,12 @@ app.register_blueprint(api.bp)
 @app.route('/<path:path>')
 def catch_all(path):
     print(f'caught_path: {path}')
-    path_dir = os.path.abspath("./flash-frontend/build") #path react build
+    path_dir = os.path.abspath("./xupreme-frontend/build") #path react build
     # If we make a request to /static/<some-file-path> for a directory that exists in
     # our static build folder, serve that file
     # This could be useful if we have images, audio, etc., that we want to have
     # available as static resources
-    if path and os.path.exists(f'./flash-frontend/build/static/{path}'):
+    if path and os.path.exists(f'./xupreme-frontend/build/static/{path}'):
       return send_from_directory(os.path.join(path_dir), path)
     # Otherwise, serve up the index.html. Our React router will handle any other routes
     else:
