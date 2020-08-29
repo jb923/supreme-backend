@@ -114,7 +114,3 @@ class Review(db.Model):
             "productId": self.product_id,
             "reviewBody": self.review_body,
         }
-
-
-
-    # NEED TO ADD NEW TABLE take down database and recreate
